@@ -1,5 +1,8 @@
 package com.ipenter.ipenter;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  *
@@ -8,7 +11,8 @@ public class App
 {
     public static void main( String[] args )
     {
-        Car car = new Car();
-        car.drive();
+    	ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+        Vehicle obj = (Vehicle)context.getBean("Vehicle1");
+        obj.drive();
     }
 }
